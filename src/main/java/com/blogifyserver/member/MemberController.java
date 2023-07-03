@@ -17,7 +17,8 @@ public class MemberController {
     }
 
     @PostMapping("/signUp")
-    public String signUp(Member member) {
+    public String signUp(@RequestBody Member member) {
+
         if (service.signUp(member)) {
             return "OK";
         } else {
